@@ -19,10 +19,33 @@ class SmartLogger:
         self._default_removed = False
 
     def add(self, *args: Any, **kwargs: Any) -> int:
-        """Добавить sink; при первом вызове убирает дефолтный stderr-sink."""
+        """
+        Добавить sink; при первом вызове убирает дефолтный stderr-sink.
+
+        Дополнительный kwarg (нет в loguru):
+            abbreviate: str | None — стиль сокращения имени модуля
+                        ("initials" | "last" | "last2").
+        """
+        from logcraft.formatters import make_abbrev_patcher
+
         if not self._default_removed:
             self._logger.remove()
             self._default_removed = True
+
+        abbreviate = kwargs.pop("abbreviate", None)
+        user_patch = kwargs.pop("patch", None)
+
+        if abbreviate is not None or user_patch is not None:
+            abbrev_patcher = make_abbrev_patcher(abbreviate or "initials")
+
+            def combined(record: dict) -> None:
+                if abbreviate is not None:
+                    abbrev_patcher(record)
+                if user_patch is not None:
+                    user_patch(record)
+
+            kwargs["patch"] = combined
+
         return self._logger.add(*args, **kwargs)
 
     def remove(self, handler_id: int | None = None) -> None:

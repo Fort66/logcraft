@@ -19,4 +19,9 @@ try:
 except ZeroDivisionError:
     logger.exception("Division by zero occurred")
 
+# Сокращение длинных путей модулей (боль Loguru #1400)
+logger.add("short.log", format="{time:HH:mm:ss} | {name} | {message}", abbreviate="last2")
+logger.info("This line goes to short.log with a short module name")
+
+
 logger.info("Application finished")
