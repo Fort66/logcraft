@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
+from typing import Any
+
 STYLES = ("initials", "last", "last2")
 
 
 def abbreviate_name(name: str, style: str = "initials") -> str:
     """
-    Сокращает путь модуля.
+    Shorten a dotted module path.
 
     Styles:
         initials: "my.company.core.utils" -> "m.c.c.utils"
@@ -29,10 +32,10 @@ def abbreviate_name(name: str, style: str = "initials") -> str:
     return ".".join([p[0] for p in parts[:-1]] + [parts[-1]])
 
 
-def make_abbrev_patcher(style: str = "initials"):
-    """Patcher для loguru: переписывает record['name'] на сокращённый."""
+def make_abbrev_patcher(style: str = "initials") -> Callable[[dict[str, Any]], None]:
+    """Return a patcher that rewrites record['name'] to its abbreviated form."""
 
-    def patcher(record: dict) -> None:
+    def patcher(record: dict[str, Any]) -> None:
         record["name"] = abbreviate_name(record["name"], style=style)
 
     return patcher

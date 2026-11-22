@@ -42,3 +42,31 @@ def test_add_abbreviate_kwarg() -> None:
 
     expected_name = abbreviate_name(__name__, style="initials")
     assert buffer.getvalue().startswith(f"{expected_name} | hello")
+
+
+def test_abbreviate_default_format_keeps_exception() -> None:
+    buffer = StringIO()
+    handler_id = logger.add(buffer, abbreviate="last", colorize=False)
+    try:
+        raise ValueError("boom")
+    except ValueError:
+        logger.exception("failed")
+    logger.remove(handler_id)
+
+    out = buffer.getvalue()
+    assert "ValueError: boom" in out
+
+
+def test_abbreviate_with_callable_format() -> None:
+    buffer = StringIO()
+    handler_id = logger.add(
+        buffer,
+        format=lambda record: "{name} >> {message}\n{exception}",
+        abbreviate="last",
+        colorize=False,
+    )
+    logger.info("hi")
+    logger.remove(handler_id)
+
+    expected = abbreviate_name(__name__, style="last")
+    assert buffer.getvalue().startswith(f"{expected} >> hi")

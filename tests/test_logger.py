@@ -2,7 +2,7 @@
 
 import sys
 from io import StringIO
-import pytest
+
 from logcraft import logger
 
 

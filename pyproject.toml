@@ -54,7 +54,12 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "N", "UP", "B", "A", "C4", "SIM", "RUF"]
-ignore = ["E501"]
+ignore = [
+    "E501",
+    "RUF001",  # кириллица в строках/комментариях — намеренно
+    "RUF002",  # кириллица в docstring — намеренно
+    "RUF003",  # кириллица в комментариях — намеренно
+]
 
 [tool.ruff.lint.isort]
 known-first-party = ["logcraft"]
@@ -66,7 +71,7 @@ warn_return_any = true
 warn_unused_configs = true
 
 [[tool.mypy.overrides]]
-module = ["loguru.*", "pyinstrument.*", "rich.*"]
+module = ["loguru.*", "rich.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
