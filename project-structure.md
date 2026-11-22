@@ -177,8 +177,8 @@ uv run python examples/rich_html_demo.py
 0,  ANSI-мусор в файлах,            "#26,       #153",      smart-logger-wrapper,       ✅ вылечено
 1,  Длинные пути модулей,           #1400,                  feature/abbreviator,        ✅ низкая
 2,  Архивные логи в общей папке,    #1473,                  feature/archive-sink,       ✅ низкая
-3,  Нет chmod на лог-файлы,         #401,                   feature/file-permissions,   низкая
-4,  Нет %s-форматирования,          #1367,                  feature/percent-format,     низкая
+3,  Нет chmod на лог-файлы,         #401,                   feature/file-permissions,   ✅ низкая
+4,  Нет %s-форматирования,          #1367,                  feature/percent-format,     ✅ низкая
 5,  Трейсбек на 200 строк,          #77,                    feature/traceback-limit,    средняя
 6,  pickle в enqueue=True,          #563,                   feature/safe-queue,         высокая
 7,  Нет OpenTelemetry,              #674,                   feature/otel-sink,          средняя
