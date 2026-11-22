@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 from collections.abc import Callable
+from pathlib import Path
 from typing import Any
 
 from loguru import logger as _loguru_logger
 
 from logcraft.formatters.abbreviator import make_abbrev_patcher
+from logcraft.sinks.archive_sink import make_archive_compression
 
 DEFAULT_FORMAT = (
     "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | "
@@ -34,9 +36,11 @@ class SmartLogger:
     def add(self, *args: Any, **kwargs: Any) -> int:
         """Add a sink; removes the default stderr sink on the first call.
 
-        Extra kwarg (not present in loguru):
+        Extra kwargs (not present in loguru):
             abbreviate: module-name abbreviation style
                         ("initials" | "last" | "last2").
+            archive_dir: directory where rotated log files are moved.
+            archive_compression: "gz" | "bz2" | "xz" | "zip" | None.
         """
         if not self._default_removed:
             self._logger.remove()
@@ -45,6 +49,21 @@ class SmartLogger:
         abbreviate = kwargs.pop("abbreviate", None)
         if abbreviate is not None:
             kwargs["format"] = self._wrap_format(kwargs.pop("format", None), abbreviate)
+
+        archive_dir = kwargs.pop("archive_dir", None)
+        if archive_dir is not None:
+            if "compression" in kwargs:
+                raise ValueError("archive_dir cannot be combined with explicit compression=")
+            if not args or not isinstance(args[0], (str, Path)):
+                raise ValueError("archive_dir requires a file-path sink")
+            kwargs["compression"] = make_archive_compression(
+                args[0],
+                archive_dir,
+                kwargs.pop("archive_compression", None),
+            )
+        else:
+            kwargs.pop("archive_compression", None)
+
         return self._logger.add(*args, **kwargs)
 
     @staticmethod
