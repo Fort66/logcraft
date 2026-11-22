@@ -89,6 +89,60 @@ class SmartLogger:
 
         return handler_id
 
+    def _emit(
+        self,
+        method: str,
+        message: Any,
+        args: tuple[Any, ...],
+        kwargs: dict[str, Any],
+    ) -> None:
+        """Apply %-style formatting if positional args are given, then delegate.
+
+        Standard-logging style ``logger.info("User %s", name)`` is converted
+        before reaching loguru. Brace style ``"Hello {}"`` keeps working:
+        if ``%``-formatting fails, args are passed through untouched.
+        """
+        if args and isinstance(message, str):
+            try:
+                message = message % args
+            except (TypeError, ValueError):
+                pass
+            else:
+                args = ()
+        getattr(self._logger, method)(message, *args, **kwargs)
+
+    def trace(self, message: Any, *args: Any, **kwargs: Any) -> None:
+        """Log with TRACE level; supports %-style args."""
+        self._emit("trace", message, args, kwargs)
+
+    def debug(self, message: Any, *args: Any, **kwargs: Any) -> None:
+        """Log with DEBUG level; supports %-style args."""
+        self._emit("debug", message, args, kwargs)
+
+    def info(self, message: Any, *args: Any, **kwargs: Any) -> None:
+        """Log with INFO level; supports %-style args."""
+        self._emit("info", message, args, kwargs)
+
+    def success(self, message: Any, *args: Any, **kwargs: Any) -> None:
+        """Log with SUCCESS level; supports %-style args."""
+        self._emit("success", message, args, kwargs)
+
+    def warning(self, message: Any, *args: Any, **kwargs: Any) -> None:
+        """Log with WARNING level; supports %-style args."""
+        self._emit("warning", message, args, kwargs)
+
+    def error(self, message: Any, *args: Any, **kwargs: Any) -> None:
+        """Log with ERROR level; supports %-style args."""
+        self._emit("error", message, args, kwargs)
+
+    def critical(self, message: Any, *args: Any, **kwargs: Any) -> None:
+        """Log with CRITICAL level; supports %-style args."""
+        self._emit("critical", message, args, kwargs)
+
+    def exception(self, message: Any, *args: Any, **kwargs: Any) -> None:
+        """Log with ERROR level including traceback; supports %-style args."""
+        self._emit("exception", message, args, kwargs)
+
     @staticmethod
     def _build_format(
         user_format: FormatTemplate,

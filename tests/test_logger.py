@@ -93,3 +93,40 @@ def test_exception_logging():
         assert "Test error" in content
     finally:
         logger.remove(handler_id)
+
+
+def test_percent_formatting() -> None:
+    buffer = StringIO()
+    handler_id = logger.add(buffer, format="{message}", colorize=False)
+    logger.info("User %s logged in from %s", "alice", "10.0.0.1")
+    logger.remove(handler_id)
+    assert "User alice logged in from 10.0.0.1" in buffer.getvalue()
+
+
+def test_brace_formatting_still_works() -> None:
+    buffer = StringIO()
+    handler_id = logger.add(buffer, format="{message}", colorize=False)
+    logger.info("Hello {}", "world")
+    logger.remove(handler_id)
+    assert "Hello world" in buffer.getvalue()
+
+
+def test_literal_percent_without_args() -> None:
+    buffer = StringIO()
+    handler_id = logger.add(buffer, format="{message}", colorize=False)
+    logger.info("100% done")
+    logger.remove(handler_id)
+    assert "100% done" in buffer.getvalue()
+
+
+def test_percent_formatting_with_exception() -> None:
+    buffer = StringIO()
+    handler_id = logger.add(buffer, format="{message}", colorize=False)
+    try:
+        raise ValueError("boom")
+    except ValueError:
+        logger.exception("Failed at %s", "step 2")
+    logger.remove(handler_id)
+    out = buffer.getvalue()
+    assert "Failed at step 2" in out
+    assert "ValueError" in out
