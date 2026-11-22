@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>LogCraft Logs</title>
+<style>
+  body { font-family: 'Consolas', 'Monaco', monospace; background: #1e1e1e; color: #d4d4d4; padding: 20px; }
+  .log-line { margin: 4px 0; white-space: pre-wrap; word-wrap: break-word; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div class="log-line">2026-11-22 14:38:43 | INFO | Application started successfully
+</div>
+<div class="log-line">2026-11-22 14:38:43 | WARNING | This is a warning with <span style="font-weight:bold">bold</span> text
+</div>
+<div class="log-line">2026-11-22 14:38:43 | ERROR | Something went wrong: <span style="color:#f48771">critical failure</span>
+</div>
+<div class="log-line">2026-11-22 14:38:43 | ERROR | An error occurred during division
+Traceback (most recent call last):
+
+> File "/mnt/Teacher/Program/GitHub/logcraft/examples/rich_html_demo.py", line 27, in <span style="color:module">
+    result = 10 / 0
+
+ZeroDivisionError: division by zero
+</div>
+<div class="log-line">2026-11-22 14:38:43 | INFO | Check app_logs.html in your browser to see colored logs!
+</div>
+</body>
+</html>
+<div class="log-line">2026-11-22 14:40:34 | INFO | Application started successfully
+</div>
+<div class="log-line">2026-11-22 14:40:34 | WARNING | This is a warning with <span style="font-weight:bold">bold</span> text
+</div>
+<div class="log-line">2026-11-22 14:40:34 | ERROR | Something went wrong: <span style="color:#f48771">critical failure</span>
+</div>
+<div class="log-line">2026-11-22 14:40:34 | ERROR | An error occurred during division
+Traceback (most recent call last):
+
+> File "/mnt/Teacher/Program/GitHub/logcraft/examples/rich_html_demo.py", line 29, in <span style="color:module">
+    result = 10 / 0
+
+ZeroDivisionError: division by zero
+</div>
+<div class="log-line">2026-11-22 14:40:34 | INFO | Check app_logs.html in your browser to see colored logs!
+</div>
+</body>
+</html>
+<div class="log-line">2026-11-22 14:45:31 | INFO | Testing diagnostic tracebacks...
+</div>
+<div class="log-line">2026-11-22 14:45:31 | ERROR | An error occurred during division
+Traceback (most recent call last):
+
+> File "/mnt/Teacher/Program/GitHub/logcraft/examples/rich_html_demo.py", line 36, in <span style="color:module">
+    result = risky_math(5, 0)
+             -> <function risky_math at 0x7fa3ce59c250>
+
+  File "/mnt/Teacher/Program/GitHub/logcraft/examples/rich_html_demo.py", line 30, in risky_math
+    step2 = step1 / b  # Если b = 0, программа споткнётся именно на этой строке
+            |       -> 0
+            -> 5
+
+ZeroDivisionError: division by zero
+</div>
+<div class="log-line">2026-11-22 14:45:31 | INFO | Check the terminal and app_logs.html for beautiful tracebacks!
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+body {
+    color: #000000;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+    <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code style="font-family:inherit">[34m2026-11-22 15:10:28[0m | [1mINFO[0m | Application started successfully
+[34m2026-11-22 15:10:28[0m | [33m[1mWARNING[0m | This is a warning
+[34m2026-11-22 15:10:28[0m | [31m[1mERROR[0m | An error occurred during division
+[33m[1mTraceback (most recent call last):[0m
+
+&gt; File &quot;[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m&quot;, line [33m39[0m, in [35m&lt;module&gt;[0m
+    [1mresult[0m [35m[1m=[0m [1mrisky_math[0m[1m([0m[34m[1m5[0m[1m,[0m [34m[1m0[0m[1m)[0m
+    [36m         -&gt; [0m[36m[1m&lt;function risky_math at 0x7f82ba301fe0&gt;[0m
+
+  File &quot;[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m&quot;, line [33m32[0m, in [35mrisky_math[0m
+    [1mstep2[0m [35m[1m=[0m [1mstep1[0m [35m[1m/[0m [1mb[0m
+    [36m        |       -&gt; [0m[36m[1m0[0m
+    [36m        -&gt; [0m[36m[1m5[0m
+
+[31m[1mZeroDivisionError[0m:[1m division by zero[0m
+[34m2026-11-22 15:10:28[0m | [1mINFO[0m | Check app_logs.html in your browser to see colored logs!
+</code></pre>
+</body>
+</html>
+
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+body {
+    color: #000000;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+    <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code style="font-family:inherit">[34m2026-11-22 15:16:06[0m | [1mINFO[0m | Application started successfully
+[34m2026-11-22 15:16:06[0m | [33m[1mWARNING[0m | This is a warning
+[34m2026-11-22 15:16:06[0m | [31m[1mERROR[0m | An error occurred during division
+[33m[1mTraceback (most recent call last):[0m
+
+&gt; File &quot;[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m&quot;, line [33m42[0m, in [35m&lt;module&gt;[0m
+    [1mresult[0m [35m[1m=[0m [1mrisky_math[0m[1m([0m[34m[1m5[0m[1m,[0m [34m[1m0[0m[1m)[0m
+    [36m         -&gt; [0m[36m[1m&lt;function risky_math at 0x7f557e79c300&gt;[0m
+
+  File &quot;[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m&quot;, line [33m35[0m, in [35mrisky_math[0m
+    [1mstep2[0m [35m[1m=[0m [1mstep1[0m [35m[1m/[0m [1mb[0m
+    [36m        |       -&gt; [0m[36m[1m0[0m
+    [36m        -&gt; [0m[36m[1m5[0m
+
+[31m[1mZeroDivisionError[0m:[1m division by zero[0m
+[34m2026-11-22 15:16:06[0m | [1mINFO[0m | Check app_logs.html in your browser to see colored logs!
+</code></pre>
+</body>
+</html>
+
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+body {
+    color: #000000;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+    <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code style="font-family:inherit">[34m2026-11-22 15:16:47[0m | [1mINFO[0m | [1mApplication started successfully[0m
+[34m2026-11-22 15:16:47[0m | [33m[1mWARNING[0m | [33m[1mThis is a warning[0m
+[34m2026-11-22 15:16:47[0m | [31m[1mERROR[0m | [31m[1mAn error occurred during division[0m
+[33m[1mTraceback (most recent call last):[0m
+
+&gt; File &quot;[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m&quot;, line [33m46[0m, in [35m&lt;module&gt;[0m
+    [1mresult[0m [35m[1m=[0m [1mrisky_math[0m[1m([0m[34m[1m5[0m[1m,[0m [34m[1m0[0m[1m)[0m
+    [36m         -&gt; [0m[36m[1m&lt;function risky_math at 0x7fcd7b59c300&gt;[0m
+
+  File &quot;[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m&quot;, line [33m39[0m, in [35mrisky_math[0m
+    [1mstep2[0m [35m[1m=[0m [1mstep1[0m [35m[1m/[0m [1mb[0m
+    [36m        |       -&gt; [0m[36m[1m0[0m
+    [36m        -&gt; [0m[36m[1m5[0m
+
+[31m[1mZeroDivisionError[0m:[1m division by zero[0m
+[34m2026-11-22 15:16:47[0m | [1mINFO[0m | [1mCheck app_logs.html in your browser to see colored logs![0m
+</code></pre>
+</body>
+</html>
+
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+body {
+    color: #000000;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+    <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code style="font-family:inherit">[34m2026-11-22 16:49:10[0m | [1mINFO[0m | [1mApplication started successfully[0m
+[34m2026-11-22 16:49:10[0m | [33m[1mWARNING[0m | [33m[1mThis is a warning[0m
+[34m2026-11-22 16:49:10[0m | [31m[1mERROR[0m | [31m[1mAn error occurred during division[0m
+[33m[1mTraceback (most recent call last):[0m
+
+&gt; File &quot;[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m&quot;, line [33m48[0m, in [35m&lt;module&gt;[0m
+    [1mresult[0m [35m[1m=[0m [1mrisky_math[0m[1m([0m[34m[1m5[0m[1m,[0m [34m[1m0[0m[1m)[0m
+    [36m         -&gt; [0m[36m[1m&lt;function risky_math at 0x7f720e79b320&gt;[0m
+
+  File &quot;[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m&quot;, line [33m41[0m, in [35mrisky_math[0m
+    [1mstep2[0m [35m[1m=[0m [1mstep1[0m [35m[1m/[0m [1mb[0m
+    [36m        |       -&gt; [0m[36m[1m0[0m
+    [36m        -&gt; [0m[36m[1m5[0m
+
+[31m[1mZeroDivisionError[0m:[1m division by zero[0m
+[34m2026-11-22 16:49:10[0m | [1mINFO[0m | [1mCheck app_logs.html in your browser to see colored logs![0m
+</code></pre>
+</body>
+</html>
+
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+body {
+    color: #000000;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+    <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code style="font-family:inherit">[34m2026-11-22 16:51:05[0m | [1mINFO[0m | [1mApplication started successfully[0m
+[34m2026-11-22 16:51:05[0m | [33m[1mWARNING[0m | [33m[1mThis is a warning[0m
+[34m2026-11-22 16:51:05[0m | [31m[1mERROR[0m | [31m[1mAn error occurred during division[0m
+[33m[1mTraceback (most recent call last):[0m
+
+&gt; File &quot;[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m&quot;, line [33m44[0m, in [35m&lt;module&gt;[0m
+    [1mresult[0m [35m[1m=[0m [1mrisky_math[0m[1m([0m[34m[1m5[0m[1m,[0m [34m[1m0[0m[1m)[0m
+    [36m         -&gt; [0m[36m[1m&lt;function risky_math at 0x7f3847f9b320&gt;[0m
+
+  File &quot;[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m&quot;, line [33m37[0m, in [35mrisky_math[0m
+    [1mstep2[0m [35m[1m=[0m [1mstep1[0m [35m[1m/[0m [1mb[0m
+    [36m        |       -&gt; [0m[36m[1m0[0m
+    [36m        -&gt; [0m[36m[1m5[0m
+
+[31m[1mZeroDivisionError[0m:[1m division by zero[0m
+[34m2026-11-22 16:51:05[0m | [1mINFO[0m | [1mCheck app_logs.html in your browser to see colored logs![0m
+</code></pre>
+</body>
+</html>
+
+</div>
+</body>
+</html>
+<div class="line"><span style="color: #000080; text-decoration-color: #000080">2026-11-22 17:18:11</span> | <span style="font-weight: bold">INFO    </span> | <span style="font-weight: bold">Application started successfully</span></div>
+<div class="line"><span style="color: #000080; text-decoration-color: #000080">2026-11-22 17:18:11</span> | <span style="color: #808000; text-decoration-color: #808000; font-weight: bold">WARNING </span> | <span style="color: #808000; text-decoration-color: #808000; font-weight: bold">This is a warning</span></div>
+<div class="line"><span style="color: #000080; text-decoration-color: #000080">2026-11-22 17:18:11</span> | <span style="color: #800000; text-decoration-color: #800000; font-weight: bold">ERROR   </span> | <span style="color: #800000; text-decoration-color: #800000; font-weight: bold">An error occurred during division</span></div>
+<div class="line"><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">Traceback (most recent call last):</span></div>
+<div class="line"></div>
+<div class="line">&gt; File &quot;<span style="color: #008000; text-decoration-color: #008000">/mnt/Teacher/Program/GitHub/logcraft/examples/</span><span style="color: #008000; text-decoration-color: #008000; font-weight: bold">rich_html_demo.py</span>&quot;, line <span style="color: #808000; text-decoration-color: #808000">46</span>, in <span style="color: #800080; text-decoration-color: #800080">&lt;module&gt;</span></div>
+<div class="line">    <span style="font-weight: bold">risky_math</span><span style="font-weight: bold">(</span><span style="color: #000080; text-decoration-color: #000080; font-weight: bold">5</span><span style="font-weight: bold">,</span> <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">0</span><span style="font-weight: bold">)</span></div>
+<div class="line">    <span style="color: #008080; text-decoration-color: #008080">-&gt; </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;function risky_math at 0x7f2ee479c300&gt;</span></div>
+<div class="line"></div>
+<div class="line">  File &quot;<span style="color: #008000; text-decoration-color: #008000">/mnt/Teacher/Program/GitHub/logcraft/examples/</span><span style="color: #008000; text-decoration-color: #008000; font-weight: bold">rich_html_demo.py</span>&quot;, line <span style="color: #808000; text-decoration-color: #808000">38</span>, in <span style="color: #800080; text-decoration-color: #800080">risky_math</span></div>
+<div class="line">    <span style="font-weight: bold">step2</span> <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">=</span> <span style="font-weight: bold">step1</span> <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">/</span> <span style="font-weight: bold">b</span></div>
+<div class="line">    <span style="color: #008080; text-decoration-color: #008080">        |       -&gt; </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span></div>
+<div class="line">    <span style="color: #008080; text-decoration-color: #008080">        -&gt; </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span></div>
+<div class="line"></div>
+<div class="line"><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">ZeroDivisionError</span>:<span style="font-weight: bold"> division by zero</span></div>
+<div class="line"><span style="color: #000080; text-decoration-color: #000080">2026-11-22 17:18:11</span> | <span style="font-weight: bold">INFO    </span> | <span style="font-weight: bold">Open app_logs.html in a browser to see the colored log page</span></div>
+<div class="line"><span style="color: #000080; text-decoration-color: #000080">2026-11-22 17:20:08</span> | <span style="font-weight: bold">INFO    </span> | <span style="font-weight: bold">Application started successfully</span></div>
+<div class="line"><span style="color: #000080; text-decoration-color: #000080">2026-11-22 17:20:08</span> | <span style="color: #808000; text-decoration-color: #808000; font-weight: bold">WARNING </span> | <span style="color: #808000; text-decoration-color: #808000; font-weight: bold">This is a warning</span></div>
+<div class="line"><span style="color: #000080; text-decoration-color: #000080">2026-11-22 17:20:08</span> | <span style="color: #800000; text-decoration-color: #800000; font-weight: bold">ERROR   </span> | <span style="color: #800000; text-decoration-color: #800000; font-weight: bold">An error occurred during division</span></div>
+<div class="line"><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">Traceback (most recent call last):</span></div>
+<div class="line"></div>
+<div class="line">&gt; File &quot;<span style="color: #008000; text-decoration-color: #008000">/mnt/Teacher/Program/GitHub/logcraft/examples/</span><span style="color: #008000; text-decoration-color: #008000; font-weight: bold">rich_html_demo.py</span>&quot;, line <span style="color: #808000; text-decoration-color: #808000">46</span>, in <span style="color: #800080; text-decoration-color: #800080">&lt;module&gt;</span></div>
+<div class="line">    <span style="font-weight: bold">risky_math</span><span style="font-weight: bold">(</span><span style="color: #000080; text-decoration-color: #000080; font-weight: bold">5</span><span style="font-weight: bold">,</span> <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">0</span><span style="font-weight: bold">)</span></div>
+<div class="line">    <span style="color: #008080; text-decoration-color: #008080">-&gt; </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;function risky_math at 0x7fd298f9c300&gt;</span></div>
+<div class="line"></div>
+<div class="line">  File &quot;<span style="color: #008000; text-decoration-color: #008000">/mnt/Teacher/Program/GitHub/logcraft/examples/</span><span style="color: #008000; text-decoration-color: #008000; font-weight: bold">rich_html_demo.py</span>&quot;, line <span style="color: #808000; text-decoration-color: #808000">38</span>, in <span style="color: #800080; text-decoration-color: #800080">risky_math</span></div>
+<div class="line">    <span style="font-weight: bold">step2</span> <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">=</span> <span style="font-weight: bold">step1</span> <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">/</span> <span style="font-weight: bold">b</span></div>
+<div class="line">    <span style="color: #008080; text-decoration-color: #008080">        |       -&gt; </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span></div>
+<div class="line">    <span style="color: #008080; text-decoration-color: #008080">        -&gt; </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span></div>
+<div class="line"></div>
+<div class="line"><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">ZeroDivisionError</span>:<span style="font-weight: bold"> division by zero</span></div>
+<div class="line"><span style="color: #000080; text-decoration-color: #000080">2026-11-22 17:20:08</span> | <span style="font-weight: bold">INFO    </span> | <span style="font-weight: bold">Open app_logs.html in a browser to see the colored log page</span></div>

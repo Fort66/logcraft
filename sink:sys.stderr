@@ -1,0 +1,48 @@
+[36m15:10:28[0m | [1mINFO    [0m | [35mlogcraft.logger[0m:[36minfo[0m:[36m58[0m - [1mApplication started successfully[0m
+[36m15:10:28[0m | [33m[1mWARNING [0m | [35mlogcraft.logger[0m:[36mwarning[0m:[36m62[0m - [33m[1mThis is a warning[0m
+[36m15:10:28[0m | [31m[1mERROR   [0m | [35mlogcraft.logger[0m:[36mexception[0m:[36m74[0m - [31m[1mAn error occurred during division[0m
+[33m[1mTraceback (most recent call last):[0m
+
+> File "[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m", line [33m39[0m, in [35m<module>[0m
+    [1mresult[0m [35m[1m=[0m [1mrisky_math[0m[1m([0m[34m[1m5[0m[1m,[0m [34m[1m0[0m[1m)[0m
+    [36m         └ [0m[36m[1m<function risky_math at 0x7f82ba301fe0>[0m
+
+  File "[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m", line [33m32[0m, in [35mrisky_math[0m
+    [1mstep2[0m [35m[1m=[0m [1mstep1[0m [35m[1m/[0m [1mb[0m
+    [36m        │       └ [0m[36m[1m0[0m
+    [36m        └ [0m[36m[1m5[0m
+
+[31m[1mZeroDivisionError[0m:[1m division by zero[0m
+[36m15:10:28[0m | [1mINFO    [0m | [35mlogcraft.logger[0m:[36minfo[0m:[36m58[0m - [1mCheck app_logs.html in your browser to see colored logs![0m
+[36m2026-11-22 15:16:06[0m | [1mINFO    [0m | [35mlogcraft.logger[0m:[36minfo[0m:[36m58[0m - [1mApplication started successfully[0m
+[36m2026-11-22 15:16:06[0m | [33m[1mWARNING [0m | [35mlogcraft.logger[0m:[36mwarning[0m:[36m62[0m - [33m[1mThis is a warning[0m
+[36m2026-11-22 15:16:06[0m | [31m[1mERROR   [0m | [35mlogcraft.logger[0m:[36mexception[0m:[36m74[0m - [31m[1mAn error occurred during division[0m
+[33m[1mTraceback (most recent call last):[0m
+
+> File "[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m", line [33m42[0m, in [35m<module>[0m
+    [1mresult[0m [35m[1m=[0m [1mrisky_math[0m[1m([0m[34m[1m5[0m[1m,[0m [34m[1m0[0m[1m)[0m
+    [36m         └ [0m[36m[1m<function risky_math at 0x7f557e79c300>[0m
+
+  File "[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m", line [33m35[0m, in [35mrisky_math[0m
+    [1mstep2[0m [35m[1m=[0m [1mstep1[0m [35m[1m/[0m [1mb[0m
+    [36m        │       └ [0m[36m[1m0[0m
+    [36m        └ [0m[36m[1m5[0m
+
+[31m[1mZeroDivisionError[0m:[1m division by zero[0m
+[36m2026-11-22 15:16:06[0m | [1mINFO    [0m | [35mlogcraft.logger[0m:[36minfo[0m:[36m58[0m - [1mCheck app_logs.html in your browser to see colored logs![0m
+[36m2026-11-22 15:16:47[0m | [1mINFO    [0m | [35mlogcraft.logger[0m:[36minfo[0m:[36m58[0m - [1mApplication started successfully[0m
+[36m2026-11-22 15:16:47[0m | [33m[1mWARNING [0m | [35mlogcraft.logger[0m:[36mwarning[0m:[36m62[0m - [33m[1mThis is a warning[0m
+[36m2026-11-22 15:16:47[0m | [31m[1mERROR   [0m | [35mlogcraft.logger[0m:[36mexception[0m:[36m74[0m - [31m[1mAn error occurred during division[0m
+[33m[1mTraceback (most recent call last):[0m
+
+> File "[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m", line [33m46[0m, in [35m<module>[0m
+    [1mresult[0m [35m[1m=[0m [1mrisky_math[0m[1m([0m[34m[1m5[0m[1m,[0m [34m[1m0[0m[1m)[0m
+    [36m         └ [0m[36m[1m<function risky_math at 0x7fcd7b59c300>[0m
+
+  File "[32m/mnt/Teacher/Program/GitHub/logcraft/examples/[0m[32m[1mrich_html_demo.py[0m", line [33m39[0m, in [35mrisky_math[0m
+    [1mstep2[0m [35m[1m=[0m [1mstep1[0m [35m[1m/[0m [1mb[0m
+    [36m        │       └ [0m[36m[1m0[0m
+    [36m        └ [0m[36m[1m5[0m
+
+[31m[1mZeroDivisionError[0m:[1m division by zero[0m
+[36m2026-11-22 15:16:47[0m | [1mINFO    [0m | [35mlogcraft.logger[0m:[36minfo[0m:[36m58[0m - [1mCheck app_logs.html in your browser to see colored logs![0m
